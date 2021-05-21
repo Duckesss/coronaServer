@@ -25,7 +25,7 @@ const Utils = function(){
                 },
             }))
         },
-        getUrlServer: () => `http://localhost:80/v1/coronaAPI`,
+        getUrlServer: () => `http://localhost:80`,
     }
 }
 export default Utils()
