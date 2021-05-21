@@ -5,8 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corona Vírus</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    TESTE
+    <section id="secMediaMovel">
+        <button id="calculaMediaMovel">Calcular média móvel</button>
+        <div id="infoMediaMovel">
+            <table class="table" id="tblMediaMovel">
+                <thead>
+                    <tr>
+                        <td align="center">Média Móvel</td>
+                        <td align="center">Dados Usados</td>
+                    </tr>
+                </thead>
+                <tbody id="bodyTblMediaMovel"></tbody>
+            </table>
+        </div>
+    </section>
+    
 </body>
+<script src="./libs/jquery.js"></script>
+<script src="./libs/mustache.min.js"></script>
+<script type="module" src="index.js"></script>
+<script id="tplLinhaMediaMovel" type="text/html">
+    {{#SEMANAS}}
+        <tr>
+            <td align="center">
+                <span id="mediaMovel___{{ID}}">{{MEDIA_MOVEL}}</span>
+            </td>
+            <td>
+                <table>
+                    <thead>
+                        <tr>
+                            <td align="center">Dia</td>
+                            <td align="center">Quantidade de casos</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#CASOS}}
+                        <tr>
+                            <td align="center">
+                                <span id="dia___{{ID_CASO}}">{{DIA}}</span>
+                            </td>
+                            <td align="center">
+                                <span id="qtdCasos___{{ID_CASO}}">{{QTD_CASOS}}</span>
+                            </td>
+                        </tr>
+                        {{/CASOS}}
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    {{/SEMANAS}}
+</script>
+    
 </html>

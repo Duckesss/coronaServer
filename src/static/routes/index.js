@@ -1,7 +1,7 @@
-const {Router,RouterFactory} = require("./Router.js")
+import Router, { RouterFactory } from "./Router.js";
 
 const routerInstance = new Router('defaultRouter', [
     new RouterFactory("index","/"),
 ])
 
-module.exports = routerInstance
+export default routerInstance

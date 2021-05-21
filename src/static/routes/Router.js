@@ -22,7 +22,7 @@ const Router = function(id,routes){
     }
 }
 
-const RouterFactory = function(name,path = ""){
+export const RouterFactory = function(name,path = ""){
     if(!name) throw Error("A rota precisa ter um nome")
     const route = {name}
     route.path = path  || (`/${name}`)
@@ -30,6 +30,4 @@ const RouterFactory = function(name,path = ""){
 }
 
 
-module.exports = {
-    Router,RouterFactory
-}
+export default Router
