@@ -21,6 +21,8 @@ const pageController = {
                 var renderedRow = Mustache.render(template, {SEMANAS: dadosFormatados});
                 $("#bodyTblMediaMovel").append(renderedRow)
                 Utils.loading.hide()
+                const text = `A média móvel ${dadosFormatados[0].MEDIA_MOVEL > dadosFormatados[1].MEDIA_MOVEL ? 'melhorou' : 'piorou'}!`
+                $("#resultComparacao").html(text)
             })
             function formataCasos(semanaDeCasos){
                 const dados = semanaDeCasos.reduce((retorno,casos,index) => {

@@ -1,6 +1,24 @@
 table{
     width: 100%;
 }
+#infoMediaMovel{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#secSaveDados{
+  display: inline-block;
+}
+#secMediaMovel{
+  display: inline;
+}
+.table{
+  border-collapse: collapse;
+}
+.table td, .table th{
+  border: 1px solid black;
+  padding: 8px;
+}
 /*
 loading from 
 https://codepen.io/devilooper/pen/gOPYMjr

@@ -14,11 +14,12 @@
     <section id="secMediaMovel">
         <button id="calculaMediaMovel">Calcular média móvel</button>
         <div id="infoMediaMovel">
+            <span id="resultComparacao"></span>
             <table class="table" id="tblMediaMovel">
                 <thead>
                     <tr>
-                        <td align="center">Média Móvel</td>
-                        <td align="center">Dados Usados</td>
+                        <th align="center">Média Móvel</th>
+                        <th align="center">Dados Usados</th>
                     </tr>
                 </thead>
                 <tbody id="bodyTblMediaMovel"></tbody>
@@ -36,11 +37,11 @@
                 <span id="mediaMovel___{{ID}}">{{MEDIA_MOVEL}}</span>
             </td>
             <td>
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
-                            <td align="center">Dia</td>
-                            <td align="center">Quantidade de casos</td>
+                            <th align="center">Dia</th>
+                            <th align="center">Quantidade de casos</th>
                         </tr>
                     </thead>
                     <tbody>
