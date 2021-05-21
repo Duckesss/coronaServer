@@ -26,6 +26,12 @@ const Utils = function(){
             }))
         },
         getUrlServer: () => `http://localhost:80`,
+        loading: {
+            show: () => $('body').append(`
+                <div class="loading">Loading&#8230;</div>
+            `),
+            hide: () => $('.loading').remove()
+        }
     }
 }
 export default Utils()

@@ -1,5 +1,4 @@
 import Utils from "./Utils.js";
-import Router from "./routes/index.js";
 
 $(document).ready(function(){
     pageController.init()
@@ -13,12 +12,15 @@ const pageController = {
         btnMediaMovel: function(){
             const self = this
             $('#calculaMediaMovel').on('click', async function(){
+                $("#bodyTblMediaMovel").html('')
+                Utils.loading.show()
                 const semanasCorona = await self.services.getCasos()
                 const dadosFormatados = formataCasos(semanasCorona)
                 const template = $("#tplLinhaMediaMovel").html()
                 Mustache.parse(template);
                 var renderedRow = Mustache.render(template, {SEMANAS: dadosFormatados});
                 $("#bodyTblMediaMovel").append(renderedRow)
+                Utils.loading.hide()
             })
             function formataCasos(semanaDeCasos){
                 const dados = semanaDeCasos.reduce((retorno,casos,index) => {
@@ -50,8 +52,10 @@ const pageController = {
         btnSalvarUltimoMes: function(){
             const self = this
             $("#SalvarUltimoMes").on("click",async function(){
+                Utils.loading.show()
                 const ultimoMes = await self.services.getCasosUltimoMes()
                 self.services.saveDados(ultimoMes).then(() => alert("Dados salvos!") )
+                Utils.loading.hide()
             })
         }
     },
